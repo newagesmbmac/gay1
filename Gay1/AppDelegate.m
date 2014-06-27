@@ -7,13 +7,23 @@
 //
 
 #import "AppDelegate.h"
+#import "Users_ListingPage.h"
 
 @implementation AppDelegate
+@synthesize nav;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    Users_ListingPage *user =[[Users_ListingPage alloc]initWithNibName:@"Users_ListingPage" bundle:nil];
+     nav =[[UINavigationController alloc]initWithRootViewController:user];
+    self.window.rootViewController =nav;
+
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
